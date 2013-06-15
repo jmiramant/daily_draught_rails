@@ -26,12 +26,16 @@ group :test, :development do
   gem 'rspec-rails'
 end
 
+gem 'haml'
 gem 'activesupport'
 gem 'activerecord'
 gem 'bcrypt-ruby'
-gem 'pg'
 gem 'sidekiq'
-gem 'brewery_db'
+
+gem 'brewery_db', github: 'jmiramant/brewery_db', branch: 'add-locations-resource'
+
+# gem 'fusion_tables'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
