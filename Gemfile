@@ -30,6 +30,8 @@ gem 'activesupport'
 gem 'activerecord'
 gem 'bcrypt-ruby'
 gem 'pg'
+gem 'sidekiq'
+gem 'brewery_db'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
