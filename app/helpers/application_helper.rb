@@ -1,12 +1,12 @@
 module ApplicationHelper
 
-	def brewery_db_paserser(location)
+	def brewery_db_parserser(location)
 		$brewery_db.locations.all(locality: location)
 	end
 
 	def generate_fusion_table(data)
 		data.each do |breweries|
-      latlong = [breweries[:latitude],breweries[:longitude]].join(",")
+      latlong = [breweries[:latitude],breweries[:longitude]].join(", ")
 			api_information = { description: breweries[:brewery][:description],
 											 status_display: breweries[:brewery][:status_display],
 												      website: breweries[:brewery][:website],
@@ -62,13 +62,12 @@ module ApplicationHelper
 	    {:name => "location_type_display", :type => 'string' },
 	    # {:name => "phone",               :type => 'number' },
 	    # {:name => "open_to_public",      :type => 'string' },
-	    # {:name => "postal_code",         :type => 'number' },\  
+	    # {:name => "postal_code",         :type => 'number' },\
 	    # {:name => "street_address",      :type => 'string' },
 	    {:name => "year_opened",         :type => 'number' }]
 
 	    sf_brews = ft.create_table "San Francisco Breweries", cols
-
-end
+	end
 
   def save_to_fusion_table(args)
 
@@ -98,8 +97,7 @@ end
       "location_type"        => args[:location_type],
       "is_closed"            => args[:is_closed],
       "is_primary"           => args[:is_primary],
-      "latlong"                  => args[:lat],
-      "long"                  => args[:long],
+      "latlong"              => args[:latlong],
       "locality"     				 => args[:locality],
       "sub_name"             => args[:sub_name],
       "location_type_display"=> args[:location_type_display],
@@ -110,5 +108,5 @@ end
       "year_opened"          => args[:year_opened]}]
 
       sf_brew_table.insert(data)
-    end
+  end
 end

@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-
+gem 'sinatra'
+gem 'slim'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -17,7 +18,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
@@ -27,14 +28,14 @@ group :test, :development do
 end
 
 gem 'haml'
-gem 'activesupport'
-gem 'activerecord'
 gem 'bcrypt-ruby'
 gem 'sidekiq'
 
-gem 'brewery_db', github: 'jmiramant/brewery_db', branch: 'add-locations-resource'
+gem "geocoder"
 
-# gem 'fusion_tables'
+gem 'brewery_db', git: 'git://github.com/jmiramant/brewery_db.git', branch: 'add-locations-resource'
+
+gem 'fusion_tables'
 
 
 # To use ActiveModel has_secure_password
