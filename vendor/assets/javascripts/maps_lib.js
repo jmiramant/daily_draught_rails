@@ -1,13 +1,6 @@
 /*!
- * Searchable Map Template with Google Fusion Tables
- * http://derekeder.com/searchable_map_template/
- *
- * Copyright 2012, Derek Eder
  * Licensed under the MIT license.
  * https://github.com/derekeder/FusionTable-Map-Template/wiki/License
- *
- * Date: 12/10/2012
- *
  */
 
 var MapsLib = MapsLib || {};
@@ -68,9 +61,9 @@ var MapsLib = {
     else $("#search_radius").val(MapsLib.searchRadius);
     $(":checkbox").attr("checked", "checked");
     $("#result_count").hide();
-    
+
     //-----custom initializers-------
-    
+
     //-----end of custom initializers-------
 
     //run the default search
@@ -259,12 +252,10 @@ var MapsLib = {
   //converts a slug or query string in to readable text
   convertToPlainString: function(text) {
     if (text == undefined) return '';
-  	return decodeURIComponent(text);
+    return decodeURIComponent(text);
   }
-  
   //-----custom functions-------
   // NOTE: if you add custom functions, make sure to append each one with a comma, except for the last one.
   // This also applies to the convertToPlainString function above
-  
   //-----end of custom functions-------
 }

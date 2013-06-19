@@ -1,11 +1,11 @@
 class BreweryController < ApplicationController
+	skip_before_filter  :verify_authenticity_token
+
   def index
   end
 
   def maps
-  	create_brew_ftable
-		breweries_by_city = brewery_db_parserser(params[:location])
-		generate_fusion_table(breweries_by_city)
+  	FusionTableWorker.perform_async#("denver")
 		render :maps
   end
 

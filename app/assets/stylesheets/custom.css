@@ -1,21 +1,26 @@
 a { color: #4B58A6; }
 
-html { height: 100% }
-body { height: 100%; margin: 0; padding: 0 }
-
-#map_canvas {
-  width: 100%;
+html {
   height: 100%;
-  position: absolute;
 }
 
-#map_canvas img {
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0
+}
+
+#map-canvas {
+  height: 100%;
+}
+
+#map-canvas img {
   max-width: none;
 }
 
-.filter-box { 
-  height: 15px; 
-  width: 15px;  
+.filter-box {
+  height: 15px;
+  width: 15px;
   display: inline-block;
   *border-right-width: 2px;
   *border-bottom-width: 2px;
