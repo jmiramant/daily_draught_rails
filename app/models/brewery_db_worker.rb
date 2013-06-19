@@ -1,9 +1,6 @@
 class BreweryDbWorker
 	include Sidekiq::Worker
 
-	      fusion_access
-
-
 	def perform(location)
 		breweries_by_city = $brewery_db.locations.all(locality: location)
 		breweries_by_city.each do |breweries|
@@ -25,7 +22,12 @@ class BreweryDbWorker
 	      "location_type_display"=> breweries.location_type,
 	      "year_opened"          => breweries.year_opened}]
 
-	      location.gsub!(/\s/,'_') if location =~ /\s/ >= 0
+	      #=> having issues with gsub
+	      # if location =~ /\s/ >= 0
+	      # 	location.gsub!(/\s/,'_')
+	      # end
+
+	      fusion_access
 
 	     	tables = $ft.show_tables
   			city_table = tables.select{|t| t.name == location }.first
