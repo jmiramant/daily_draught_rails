@@ -30,6 +30,7 @@ end
 gem 'haml'
 gem 'bcrypt-ruby'
 gem 'sidekiq'
+gem 'mechanize'
 
 gem "geocoder"
 

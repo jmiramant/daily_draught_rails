@@ -7,7 +7,7 @@ class BreweryDbWorker
       latlong = [breweries.latitude,breweries.longitude].join(", ")
 
 	    data = [{
-	      "description"          => breweries.brewery.description,
+	      "description"         => breweries.brewery.description,
 	      "status_display"       => breweries.brewery.status_display,
 	      "website"              => breweries.brewery.website,
 	      "brewery_id"           => breweries.brewery.id,
@@ -32,7 +32,27 @@ class BreweryDbWorker
 	     	tables = $ft.show_tables
   			city_table = tables.select{|t| t.name == location }.first
 	      city_table.insert(data)
+	      create_brewery(data[0])
     end
+	end
+
+	def create_brewery(args)
+	  Brewery.create(
+	  	description: args[:description],
+      status_display: args[:status_display],
+      website: args[:website],
+      brewer_id: args[:brewery_id],
+      country: args[:country],
+      hours_of_operation: args[:hours_of_operation],
+      location_type: args[:location_type],
+      is_closed: args[:is_closed],
+      is_primary: args[:is_primary],
+      latlong: args[:latlong],
+      locality: args[:locality],
+      sub_name: args[:sub_name],
+      location_type_display: args[:location_type_display],
+      year_opened: args[:year_opened]
+	  	)
 	end
 
 	def fusion_access
