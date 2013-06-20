@@ -1,8 +1,18 @@
-%div
-%form{:action => "/maps", :method => "Post"}
-  Location:
-  %input{:name => "location", :type => "text"}/
-  %br/
-  %input{:type => "submit", :value => "Submit"}/
-  %br/
-
+%header.top_nav
+	%div#login_box
+		#login.login
+			login
+		#fbook.login
+			facebook
+		#google.login
+			google
+		%div#login-errors
+%div.login_screen
+%div.screen
+%div.search
+	%form{:action => "/maps", :method => "Post"}
+		Enter City
+		%br/
+		%input{:name => "location", :id => "location", :type => "text"}/
+		%br/
+		%input{:type => "submit", :value => "Beer Me"}/
