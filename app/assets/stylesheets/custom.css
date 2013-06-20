@@ -10,8 +10,9 @@ body {
   padding: 0
 }
 
-#map-canvas {
-  height: 100%;
+#map_canvas {
+  height: 500px;
+  width: 500px;
 }
 
 #map-canvas img {

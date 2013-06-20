@@ -11,10 +11,10 @@ class CreateBreweries < ActiveRecord::Migration
       t.string :location_type
       t.string :is_closed
       t.string :is_primary
-      t.location :latlong
+      t.string :latlong
       t.string :sub_name
       t.string :location_type_display
-      t.number :year_opened
+      t.integer :year_opened
 
       t.timestamps
     end

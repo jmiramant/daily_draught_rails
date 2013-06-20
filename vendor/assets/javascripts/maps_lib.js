@@ -11,7 +11,7 @@ var MapsLib = {
 
   //the encrypted Table ID of your Fusion Table (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1xJ2qz6yFOjC9DagonspCBSVh03oblhVCRXDw7_g",
+  fusionTableId:      "1xZu8VGVhRkIX0HtDeODRu38M7fPzKNOH6jVPQYs",
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
@@ -22,7 +22,7 @@ var MapsLib = {
   //example: locationColumn:     "'my location'",
   locationColumn:     "latlong",
 
-  map_centroid:       new google.maps.LatLng(-25.363882, 131.044922), //center that your map defaults to
+  map_centroid:       new google.maps.LatLng(34.257216, -111.171875), //center that your map defaults to
   locationScope:      "san francisco",      //geographical area appended to all address searches
   recordName:         "result",       //for showing number of results
   recordNamePlural:   "results",
@@ -41,6 +41,7 @@ var MapsLib = {
       center: MapsLib.map_centroid,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+    alert($("#map_canvas")[0]);
     map = new google.maps.Map($("#map_canvas")[0],myOptions);
 
     // maintains map centerpoint for responsive design
@@ -72,7 +73,7 @@ var MapsLib = {
 
   doSearch: function(location) {
     MapsLib.clearSearch();
-    var address = $("#search_address").val();
+    var address = ""//$("#search_address").val();
     MapsLib.searchRadius = $("#search_radius").val();
 
     var whereClause = MapsLib.locationColumn + " not equal to ''";

@@ -181,6 +181,8 @@ GEM
       unf_ext
     unf_ext (0.0.6)
     webrobots (0.1.1)
+    zurb-foundation (4.0.9)
+      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -194,6 +196,7 @@ DEPENDENCIES
   haml
   jquery-rails
   mechanize
+  nokogiri
   pg
   rails (= 3.2.11)
   rspec-rails
@@ -202,3 +205,4 @@ DEPENDENCIES
   sinatra
   slim
   uglifier
+  zurb-foundation (~> 4.0.0)
