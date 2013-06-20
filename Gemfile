@@ -32,8 +32,9 @@ end
 
 gem 'haml'
 
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'sidekiq'
+gem 'twitter'
 
 gem 'nokogiri'
 gem 'mechanize'
