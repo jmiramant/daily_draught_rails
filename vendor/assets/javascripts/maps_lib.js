@@ -41,7 +41,6 @@ var MapsLib = {
       center: MapsLib.map_centroid,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    alert($("#map_canvas")[0]);
     map = new google.maps.Map($("#map_canvas")[0],myOptions);
 
     // maintains map centerpoint for responsive design

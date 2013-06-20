@@ -5,7 +5,7 @@ class BreweryController < ApplicationController
   end
 
   def maps
-  	# FusionTableWorker.perform_async(params[:location].downcase.strip)
+  	FusionTableWorker.perform_async(params[:location].downcase.strip)
 		render :maps
   end
 
