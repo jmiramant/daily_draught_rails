@@ -35,6 +35,7 @@ gem 'haml'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'sidekiq'
 gem 'twitter'
+gem 'oauth2'
 
 gem 'nokogiri'
 gem 'mechanize'
