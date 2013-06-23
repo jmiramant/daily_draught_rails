@@ -7,12 +7,20 @@
 		#google.login
 			google
 		%div#login-errors
+		%div#searchhead
+			%form{:action => "/maps", :method => "Post"}
+				%br/
+				%input{:name => "location", :placeholder => "Enter City", :id => "headloc", :type => "text"}/
+				%br/
+				%input{:type => "submit", :id => 'searchheadbutton', :value => "Beer Me"}/
+%section.login_screen{"data-speed" => "10", "data-type" => "background"}
 %div.login_screen
 %div.screen
-%div.search
+#some_div.search
 	%form{:action => "/maps", :method => "Post"}
-		Enter City
 		%br/
-		%input{:name => "location", :id => "location", :type => "text"}/
+		%input{:name => "location", :placeholder => "City", :id => "location", :type => "text"}/
 		%br/
-		%input{:type => "submit", :value => "Beer Me"}/
+		%input{:type => "submit", :id => 'searchbar', :value => "Beer Me"}/
+%section#para_one{"data-speed" => "10", "data-type" => "background"}
+	%article I am absolute positioned

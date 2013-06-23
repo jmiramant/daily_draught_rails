@@ -8,16 +8,16 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
-require 'yaml'
+# require 'yaml'
 # require "rails/test_unit/railtie"
 
-rails_root = Rails.root || File.dirname(__FILE__) + '/../..'
-config = YAML.load_file(rails_root.to_s + '/config/env_vars.yml')
-if config.key?(Rails.env) && config[Rails.env].is_a?(Hash)
-  config[Rails.env].each do |key, value|
-    ENV[key] = value.to_s
-  end
-end
+# rails_root = Rails.root || File.dirname(__FILE__) + '/../..'
+# config = YAML.load_file(rails_root.to_s + '/config/env_vars.yml')
+# if config.key?(Rails.env) && config[Rails.env].is_a?(Hash)
+#   config[Rails.env].each do |key, value|
+#     ENV[key] = value.to_s
+#   end
+# end
 
 
 if defined?(Bundler)

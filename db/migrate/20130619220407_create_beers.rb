@@ -7,6 +7,10 @@ class CreateBeers < ActiveRecord::Migration
       t.timestamps
     end
   end
+
+  def down
+    drop_table :beers
+  end
 end
 
 

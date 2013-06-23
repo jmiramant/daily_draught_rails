@@ -2,7 +2,7 @@ class BreweryDbWorker
 	include Sidekiq::Worker
 
 	def perform(location)
-		breweries_by_city = $brewery_db.locations.all(locality: location)
+		breweries_by_city = $brewery_db.locations.all(locality: location.gsub(/\_/," ").split(' ').map(&:capitalize).join(' '))
 		breweries_by_city.each do |breweries|
       latlong = [breweries.latitude,breweries.longitude].join(", ")
 
@@ -22,22 +22,19 @@ class BreweryDbWorker
 	      :location_type_display => breweries.location_type,
 	      :year_opened           => breweries.year_opened    }
 
-	      #=> having issues with gsub
-	      # if location =~ /\s/ >= 0
-	      # 	location.gsub!(/\s/,'_')
-	      # end
 
 	      fusion_access
 
 	     	tables = $ft.show_tables
   			city_table = tables.select{|t| t.name == location }.first
 	      city_table.insert(data)
-	      create_in_db(data)
+	      create_in_db(data, location)
     end
 	end
 
-	def create_in_db(args)
+	def create_in_db(args, loc)
 	  Brewery.create(
+	  	 location_lookup: loc,
 		  		 description: args[:description],
 	      status_display: args[:status_display],
 	      			 website: args[:website],

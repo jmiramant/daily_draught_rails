@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 
   def self.find_or_create_user_by_token(params)
     response = JSON.parse(self.token(params['accessToken']).get('/me').body)
+    p 'lkajdhfkjadkjdf'
     user = where(provider: params['provider'], uid: params['userID']).first_or_create
     user.provider = params['provider']
     user.uid = params['userID']
@@ -31,4 +32,5 @@ class User < ActiveRecord::Base
     user.save!
     user
   end
+
 end

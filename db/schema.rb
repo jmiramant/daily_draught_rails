@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130619220407) do
+ActiveRecord::Schema.define(:version => 20130622161748) do
 
   create_table "beers", :force => true do |t|
     t.integer  "brewery_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130619220407) do
   end
 
   create_table "breweries", :force => true do |t|
+    t.text     "location_lookup"
     t.text     "description"
     t.string   "status_display"
     t.string   "locality"
@@ -39,11 +40,17 @@ ActiveRecord::Schema.define(:version => 20130619220407) do
     t.datetime "updated_at",            :null => false
   end
 
-  create_table "hopheads", :force => true do |t|
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "image"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

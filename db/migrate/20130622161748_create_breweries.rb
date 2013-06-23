@@ -1,6 +1,7 @@
 class CreateBreweries < ActiveRecord::Migration
   def change
     create_table :breweries do |t|
+    	t.string :location_lookup
       t.text :description
       t.string :status_display
       t.string :locality

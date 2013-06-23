@@ -13,4 +13,8 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps
     end
   end
+
+  def down
+    drop_table :users
+  end
 end
